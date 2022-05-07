@@ -1,0 +1,55 @@
+-
+  title: A Very Basic Example Gallery
+  directory: san-francisco
+  preview:
+    filename: dsc02154_39908591493_o.jp-6000x4000
+    original: dsc02154_39908591493_o.jp-6000x4000.jpg
+    sizes:
+    - dsc02154_39908591493_o.jp-6000x4000.jpg
+    - dsc02154_39908591493_o.jp-6000x4000_factor-02.jpg
+    - dsc02154_39908591493_o.jp-6000x4000_factor-04.jpg
+    - dsc02154_39908591493_o.jp-6000x4000_factor-08.jpg
+    - dsc02154_39908591493_o.jp-6000x4000_factor-16.jpg
+    thumbnail: dsc02154_39908591493_o.jp-6000x4000_factor-16.jpg
+
+-
+  title: A More Complicated Example Gallery
+  directory: ghent-light-festival
+  preview:
+    filename: dsc02450_39908595693_o.jp-6000x4000
+    original: dsc02450_39908595693_o.jp-6000x4000.jpg
+    sizes:
+    - dsc02450_39908595693_o.jp-6000x4000.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-02.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-04.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-08.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
+    thumbnail: dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
+
+-
+  title: A More Complicated Example Gallery
+  directory: ghent-light-festival
+  preview:
+    filename: dsc02450_39908595693_o.jp-6000x4000
+    original: dsc02450_39908595693_o.jp-6000x4000.jpg
+    sizes:
+    - dsc02450_39908595693_o.jp-6000x4000.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-02.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-04.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-08.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
+    thumbnail: dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
+
+-
+  title: A More Complicated Example Gallery
+  directory: ghent-light-festival
+  preview:
+    filename: dsc02450_39908595693_o.jp-6000x4000
+    original: dsc02450_39908595693_o.jp-6000x4000.jpg
+    sizes:
+    - dsc02450_39908595693_o.jp-6000x4000.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-02.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-04.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-08.jpg
+    - dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
+    thumbnail: dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg

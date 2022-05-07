@@ -1,0 +1,72 @@
+---
+# layout: compress
+---
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
+
+        {% include navigation.html %}
+        <p> </p>
+
+        <h1 class="post-headline">{{site.title}}</h1>
+        <h3 class="post-description">{{site.description}}</h3>
+
+        {% seo %}
+
+        {% include favicon.html %}
+
+        {% include mathjax.html %}
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+        <!-- Gallery stuff -->
+      {% if page.support contains 'jquery' %}
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+      {% endif %}
+
+      {% if page.support contains 'gallery' %}
+      <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+      <!-- Actual includes needed for the gallery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.19/js/lightgallery-all.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.19/css/lightgallery.min.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.0/isotope.pkgd.min.js"></script>
+      <link rel="stylesheet" href="{{ site.url }}{{ site.baseurl }}/{{ "css/gallery.css" }}" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js"></script>
+      {% endif %}
+
+
+    </head>
+
+    <body>
+        <main>
+            <article>
+                {{ content }}
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> &copy; {{site.title}} {{ site.time | date: '%Y' }}
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>.
+                    Last updated on {{ site.time | date_to_long_string }}
+            </small>
+          </p>
+
+        {% include social-footer.html %}
+
+        </footer>
+        
+        {% include analytics.html %}
+
+    </body>
+
+</html>

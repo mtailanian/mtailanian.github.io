@@ -1,0 +1,30 @@
+{
+  "name": "mtailanian.github.io",
+  "authors": [
+    "Matias Tailanian <mtailanian@gmail.com>"
+  ],
+  "description": "Personal site",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "eventEmitter": ">=4.2 <5",
+    "eventie": "^1",
+    "doc-ready": "~1.0.4",
+    "get-style-property": "1.x",
+    "isotope-layout": "isotope#^3.0.6",
+    "imagesloaded": "^4.1.0",
+    "jquery-mousewheel": "^3.1.13",
+    "jquery": "^3.6.0",
+    "isotope": "^2.2.2",
+    "lightgallery": "^2.4.0",
+    "picturefill": "^3.0.2"
+  }
+}
