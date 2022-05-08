@@ -12,7 +12,7 @@ $ rm -r _site/*
 
 Clone your repo's gh-pages branch into the _site directory:
 ```
-$ git clone -b gh-pages `git config remote.origin.url` _site
+git clone -b gh-pages git@github.com:mtailanian/mtailanian.github.io.git _site
 ```
 
 Final steps: Just let jekyll build, do commit & push:
