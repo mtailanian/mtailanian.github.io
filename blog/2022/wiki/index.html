@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/assets/css/main.css">
+
+        <div class="links scroll">
+        <a href="/">Home</a>
+        <a href="/publications/">Publications</a>
+        <a href="/code/">Code</a>
+        <!-- <a href="/projects/">Projects</a> -->
+        <a href="/blog/">Blog</a>
+        <!-- <a href="/archive/">Archive</a> -->
+        <a href="/photography/">Photography</a>
+</div>
+
+        <p> </p>
+
+        <h1 class="post-headline">Matías Tailanian</h1>
+        <h3 class="post-description">Msc. in Applied Mathematics, Vision and Machine Learning. Almost PhD.
+</h3>
+
+        <p style="margin-bottom:1.2cm;"></p>
+
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Wiki with many usefull commands | Matías Tailanian</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Wiki with many usefull commands" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Utils" />
+<meta property="og:description" content="Utils" />
+<link rel="canonical" href="/blog/2022/wiki/" />
+<meta property="og:url" content="/blog/2022/wiki/" />
+<meta property="og:site_name" content="Matías Tailanian" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-15T00:00:00-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Wiki with many usefull commands" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-15T00:00:00-03:00","datePublished":"2022-07-15T00:00:00-03:00","description":"Utils","headline":"Wiki with many usefull commands","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2022/wiki/"},"url":"/blog/2022/wiki/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <!-- Generated using https://favicon.io/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?">
+<link rel="manifest" href=site.webmanifest">
+
+
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+        <!-- Gallery stuff -->
+      
+
+      
+
+
+    </head>
+
+    <body>
+        <main>
+            <article>
+                <h1 class="post-headline">Wiki with many usefull commands</h1>
+<p class="meta"><small>July 15, 2022</small></p>
+
+<h2 id="utils">Utils</h2>
+
+<h3 id="comprimir-tar">Comprimir tar</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -czvf name-of-archive,tar,gz /path/to/directory-or-file
+</code></pre></div></div>
+
+<h3 id="descomprimir-tar">Descomprimir tar</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xzvf archive,tar,gz
+</code></pre></div></div>
+
+<h3 id="buscar-palabras-en-archivos">Buscar palabras en archivos</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>grep --include '&lt;regexp_to_filter_files_to_search_in&gt;' -r "&lt;string_to_search&gt;" &lt;path&gt;
+</code></pre></div></div>
+
+<h3 id="buscar-archivos-con">Buscar archivos con</h3>
+
+<p><code class="language-plaintext highlighter-rouge">find , -type f -name "abc*"</code></p>
+
+<h3 id="achicar-peso-de-pdfs">Achicar peso de PDFs</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gs -sDEVICE=pdfwrite -dCompatibilityLevel=1,4 -dPDFSETTINGS=/prepress -dNOPAUSE -dQUIET -dBATCH -sOutputFile=output,pdf input,pdf
+</code></pre></div></div>
+
+<h3 id="matar-un-proceso-python-específico">Matar un proceso python específico</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ps ax | grep 'python &lt;regexp_comando_ejecutado&gt;' | grep -v grep
+</code></pre></div></div>
+
+<h3 id="averiguar-el-proceso-que-consume-gpu-y-eliminarlo">Averiguar el proceso que consume GPU y eliminarlo</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo fuser -v /dev/nvidia*
+</code></pre></div></div>
+
+<p>Ahí fijarse el PID y matarlo con <code class="language-plaintext highlighter-rouge">sudo kill -9 PID</code></p>
+
+<h3 id="acceder-al-puerto-6007-de-michigan-a-taves-del-puerto-7007-de-magic">Acceder al puerto 6007 de michigan a taves del puerto 7007 de magic</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo iptables -t nat -A PREROUTING -p tcp --dport 7007 -j DNAT --to-destination 192,168,0,50:6007
+sudo iptables -A FORWARD -p tcp --dport 7007 -j ACCEPT
+sudo service network-manager restart
+</code></pre></div></div>
+
+<h3 id="listar-ips-conectadas-a-la-red-local">Listar IPs conectadas a la red local</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install nmap
+sudo apt install net-tools
+nmap -sP 192,168,0,0/24
+</code></pre></div></div>
+
+<h3 id="rsync">Rsync</h3>
+
+<p>Copia todo de src a dst si no existe el archivo en dst</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsync -a -v --ignore-existing src dst
+</code></pre></div></div>
+
+<h3 id="ffmpeg-convert-videos-batch">FFMPEG convert videos batch</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">for </span>i <span class="k">in</span> <span class="k">*</span>,MOV<span class="p">;</span>
+  <span class="k">do </span><span class="nv">name</span><span class="o">=</span><span class="sb">`</span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">','</span> <span class="nt">-f1</span><span class="sb">`</span>
+  <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$name</span><span class="s2">"</span>
+  ffmpeg <span class="nt">-i</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">"</span> <span class="nt">-vcodec</span> h264 <span class="nt">-acodec</span> mp2 <span class="s2">"</span><span class="k">${</span><span class="nv">name</span><span class="k">}</span><span class="s2">,mp4"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<h3 id="convert-images-bash">Convert images bash</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for FILE in $(ls full_size/*,jpeg)
+do
+    BASE=`basename $FILE`
+    echo $BASE
+    DST=full_size_q75/$BASE
+    convert "$FILE" -scale 50% "$DST"
+done
+</code></pre></div></div>
+
+<h3 id="conver-image-format">Conver image format</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for PHOTO in *,tiff
+  do
+    BASE=`basename $PHOTO ,tiff`
+    convert "$PHOTO" ",/jpegs/$BASE,jpeg"
+done
+</code></pre></div></div>
+
+<h3 id="image-magick-util-commands">Image magick util commands</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert entrada,jpg -quality 75 salida,jpg
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert entrada,jpg -scale 50% salida,jpg
+</code></pre></div></div>
+
+<h3 id="montar-disco-externo">Montar disco externo</h3>
+
+<p>Para mirar los discos conectados:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo fdisk -l</code></p>
+
+<p>Para montar el disco <code class="language-plaintext highlighter-rouge">sdb1</code>:</p>
+
+<p><code class="language-plaintext highlighter-rouge">sudo mount -t ntfs-3g /dev/sda1 /media/nombredisco</code></p>
+
+<h3 id="checkear-velocidad-de-lectura-y-escritura-a-disco-externo">Checkear velocidad de lectura y escritura a disco externo</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install hdparm
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo hdparm -Tt /dev/sda1
+</code></pre></div></div>
+
+<h2 id="diffmerge-de-pycharm-desde-consola">Diff/Merge de Pycharm desde consola</h2>
+
+<p>Primero generar el ejecutable desde pycharm (si no está generado de antes), Esto hay q correrlo una sola vez</p>
+
+<p>Ir a Tools –&gt; Create Command Line Launcher</p>
+
+<p>Va a cerar el ejecutable <code class="language-plaintext highlighter-rouge">/usr/local/bin/charm</code></p>
+
+<p>Para hacer el diff o el merge:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/charm diff &lt;path1&gt; &lt;path2&gt;
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/local/bin/charm merge &lt;path1&gt; &lt;path2&gt;
+</code></pre></div></div>
+
+<h2 id="entrar-por-ssh-al-server-de-d-sense">Entrar por ssh al server de D-Sense</h2>
+
+<p>Editar el archivo <code class="language-plaintext highlighter-rouge">~/,ssh/config</code></p>
+
+<p>Agregar la siguientes entradas:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>host michigan
+    hostname 192,168,0,50
+    user dsense
+    port 22
+    ForwardX11 no
+    Compression yes
+    RemoteForward 52698 localhost:52698
+
+host michiganx
+    hostname 192,168,0,50
+    user dsense
+    port 22
+    ForwardX11 yes
+    Compression yes
+    RemoteForward 52698 localhost:52698
+</code></pre></div></div>
+
+<p>Y listo\tluego se usa así: <code class="language-plaintext highlighter-rouge">ssh michigan</code></p>
+
+<p>El <code class="language-plaintext highlighter-rouge">michiganx</code> se usa si queremos tener el X habilitado\tpara hacer cosas gráficas de forma remota,</p>
+
+<h3 id="para-que-no-pida-contraseña-al-entrar">Para que no pida contraseña al entrar</h3>
+
+<p>En la máquina local generar un par de claves publica-privada y copiar la clave publica al known_hosts del remote server</p>
+
+<p>En la máquina local</p>
+<ol>
+  <li>Generarla <code class="language-plaintext highlighter-rouge">ssh-keygen -t rsa</code></li>
+  <li>Ponerle nombre y passphrase (o no)</li>
+  <li>Agregar la identidad: <code class="language-plaintext highlighter-rouge">ssh-add &lt;path-a-clave-privada&gt;</code></li>
+  <li>Copiar la clave pública. Mostrarla con <code class="language-plaintext highlighter-rouge">cat &lt;path-a-clave-publica&gt;</code> (la que termina con <code class="language-plaintext highlighter-rouge">.pub</code>)</li>
+</ol>
+
+<p>En la máquina remota</p>
+<ol>
+  <li>Editar el archivo <code class="language-plaintext highlighter-rouge">~/.ssh/authorized_keys</code> y pegar la clave pública que copiamos recién</li>
+</ol>
+
+<h2 id="add-user-to-git">Add user to git</h2>
+
+<p>1, Generar una nueva clave:</p>
+
+<p>Debe estar asociada a cierto correo, En el ejemplo de abajo lo hacemos para dos usuarios distintos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-keygen -t rsa -C "user1@organization,com"
+ssh-keygen -t rsa -C "user2@organization,com"
+</code></pre></div></div>
+
+<p>2, Inicial el ssh-agent</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>eval `ssh-agent -s`
+</code></pre></div></div>
+
+<p>3, Agregar las claves teniendo cuidado de no sobre-escribir las que ya existan</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh-add ~/,ssh/id_rsa_user1
+ssh-add ~/,ssh/id_rsa_user2
+</code></pre></div></div>
+
+<p>4, Agregar al archivo ~/,ssh/config</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Host git,assembla,com-NAME-USER-1
+  HostName git,assembla,com
+  User Git
+  IdentityFile ~/,ssh/id_rsa_user1
+Host git,assembla,com-NAME-USER-2
+  HostName git,assembla,com
+  User Git
+  IdentityFile ~/,ssh/id_rsa_user2
+</code></pre></div></div>
+<p>5, Configurar nombre y mail para el git</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git config --global user,name "NAME-USER-1"
+git config --global user,email "user1@organization,com"
+</code></pre></div></div>
+
+<h2 id="entrar-por-ssh-al-aws-de-eikyou">Entrar por ssh al AWS de Eikyou</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -i ,ssh/"Eikyou,pem" ec2-user@ec2-52-14-74-160,us-east-2,compute,amazonaws,com
+</code></pre></div></div>
+
+<h2 id="bajar-imagenes-de-eikyou">Bajar imagenes de Eikyou</h2>
+
+<p>1, Bajar el json de http://analytics,eikyou,me/#, Obtenemos jsonlabels,txt
+2, cd al repo de eikyou y ejecutar:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python eikyou_donwload_from_json,py \
+	--file jsonlabels,txt \
+	--output &lt;path_al_directorio_donde_queremos_guardar_las_imagenes&gt;
+</code></pre></div></div>
+
+<h2 id="bajar-imagenes-de-google">Bajar imagenes de google</h2>
+<p>https://www,pyimagesearch,com/2017/12/04/how-to-create-a-deep-learning-dataset-using-google-images/</p>
+
+<p>1, Hacer una búsqueda en google images con Chrome
+2, Ver -&gt; Opciones para desarrolladores -&gt; Consola de JavaScript
+3, Ejecutar en la consola de Javascript:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// pull down jquery into the JavaScript console
+var script = document,createElement('script');
+script,src = "https://ajax,googleapis,com/ajax/libs/jquery/2,2,0/jquery,min,js";
+document,getElementsByTagName('head')[0],appendChild(script);
+</code></pre></div></div>
+
+<p>4, Ejecutar en la consola de Javascript:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// grab the URLs
+var urls = $(',rg_di ,rg_meta'),map(function() { return JSON,parse($(this),text()),ou; });
+</code></pre></div></div>
+
+<p>5, Ejecutar en la consola de Javascript:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// write the URls to file (one per line)
+var textToSave = urls,toArray(),join('\n');
+var hiddenElement = document,createElement('a');
+hiddenElement,href = 'data:attachment/text,' + encodeURI(textToSave);
+hiddenElement,target = '_blank';
+hiddenElement,download = 'urls,txt';
+hiddenElement,click();
+</code></pre></div></div>
+
+<p>6, El paso anterior guarda un archivo en Descargas con el nombre <code class="language-plaintext highlighter-rouge">urls,txt</code>
+7, Pararse en la carpeta <code class="language-plaintext highlighter-rouge">&lt;eikyou_path&gt;/repo/</code> y ejecutar en consola:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python download_images_from_urls,py \
+	--urls &lt;path_a_descargas&gt;/urls,txt \
+	--output &lt;path_a_carpeta_donde_se_guardaran_las_imagenes&gt;
+</code></pre></div></div>
+
+<p>8, Inspección visual para descartar imágenes que no aplican</p>
+
+<h2 id="ssh-utils">SSH utils</h2>
+<p>Para mantener la sesion en la terminal usar screen
+Ademas\tsi queremos editar archivos remotos desde el sublime:</p>
+
+<p>instalar <code class="language-plaintext highlighter-rouge">rsub</code> en el servidor:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo wget -O /usr/local/bin/rsub https://raw,github,com/aurora/rmate/master/rmate
+sudo chmod +x /usr/local/bin/rsub
+</code></pre></div></div>
+
+<p>en el host ejecutar:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R 52698:localhost:52698 server_user@server_address
+</code></pre></div></div>
+
+<p>O bien</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh -R 52698:localhost:52698 michigan
+</code></pre></div></div>
+
+<p>Para abrir un archivo en el sublime host ejecutar desde el remoto</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rsub &lt;path_al_archivo_a_editar&gt;/archivo,txt
+</code></pre></div></div>
+
+<h2 id="screen">Screen</h2>
+<p>El screen hay que correrlo directo en el servidor, Primero entramos por ssh al servidor y despues ejecutamos el screen, Creamos un screen con nombre con:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen -S session_name
+</code></pre></div></div>
+
+<p>Ahi se manda a ejecutar el proceso que se quiera y luego para salir de una sesion y poder volver a entrar\tejecutar desde el remoto:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Ctl-A D
+</code></pre></div></div>
+
+<p>Para volver a entrar ejecutar desde el host</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen -r session_name
+</code></pre></div></div>
+
+<p>Otro comando util de screen que sirve para ver las sesiones que hay corriendo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>screen -ls
+</code></pre></div></div>
+
+<h2 id="cron-con-virtualenv-y-screen">Cron con virtualenv y screen</h2>
+<p>Para programar una tarea usamos cron, Entramos a la configuración con:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -e
+</code></pre></div></div>
+
+<p>Esto abre el archivo de configuración que utiliza el siguiente formato:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>minute hour day-of-month month day-of-week command
+</code></pre></div></div>
+
+<p>Donde cada uno de los parámetros puede ser un número o una lista separada por <code class="language-plaintext highlighter-rouge">,</code> y <code class="language-plaintext highlighter-rouge">day-of-week</code> es el número de día de la semana arrancando en 0 para el Domingo,</p>
+
+<p>Ejemplos útiles explicativos:</p>
+<ul>
+  <li>Correr algo todos los lunes a las 17:30hs: <code class="language-plaintext highlighter-rouge">30 17 * * 1 /path/to/command</code></li>
+  <li>Correr algo cada 15 minutos: <code class="language-plaintext highlighter-rouge">*/15 * * * * /path/to/command</code></li>
+  <li>Correr algo los lunes miércoles y viernes a las 12:00: <code class="language-plaintext highlighter-rouge">0 12 * * 1,3,5 /path/to/command</code></li>
+</ul>
+
+<p>Además se puede poner el path a un script de bash que haga todo\ten vez de un comando solo: <code class="language-plaintext highlighter-rouge">30 17 * * 1 /path/to/script,sh</code>\tdonde <code class="language-plaintext highlighter-rouge">script,sh</code> es algo del estilo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#!/bin/sh
+
+cd /home/dsense/
+ls
+</code></pre></div></div>
+
+<p><strong>Hay que usar SIEMPRE rutas absolutas!</strong></p>
+
+<h3 id="usar-screen-en-un-cron">Usar screen en un Cron</h3>
+<p>Dentro del comando que se le pasa hay que usar <code class="language-plaintext highlighter-rouge">inscreen</code></p>
+
+<ul>
+  <li>Se descarga de acá: https://gist,github,com/smoser/1019125</li>
+  <li>Se pone en <code class="language-plaintext highlighter-rouge">/bin/inscreen</code></li>
+  <li>Se le dan permisos: <code class="language-plaintext highlighter-rouge">chmod 755 /bin/inscreen</code></li>
+</ul>
+
+<p>Primero hay que tener creada la sesión de screen, Supongamos que se llama ScreenTest (se crea así: <code class="language-plaintext highlighter-rouge">screen -S ScreenTest</code>),</p>
+
+<p>Y el comando de ejemplo del <code class="language-plaintext highlighter-rouge">crontab -e</code> quedaría así:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>30 17 * * 1 inscreen ScreenTest --keep-open /path/to/script,sh
+</code></pre></div></div>
+
+<p>El <code class="language-plaintext highlighter-rouge">--keep-open</code> es para que no se cierre la ventana luego de terminar de ejecutar el comando</p>
+
+<h3 id="usar-virtualenvirnoment-en-un-cron">Usar VirtualEnvirnoment en un Cron</h3>
+<p>El comando source/bin/activate puede no funcionar con el interpreter <code class="language-plaintext highlighter-rouge">sh</code>\tpero de todas formas alcanza con pasar la ruta completa al interpreter de python que está dentro del virtual envirnoment, Por ejemplo si tenemos un VE en <code class="language-plaintext highlighter-rouge">/home/user/ve</code>\tejecutamos un script de <code class="language-plaintext highlighter-rouge">python</code> de la siguiente manera:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>30 17 * * 1 inscreen ScreenTest --keep-open /home/user/ve/bin/python3 /home/user/src/main,py
+</code></pre></div></div>
+
+<h2 id="generar-un-ejecutable-para-osx-a-partir-de-un-programa-python">Generar un ejecutable para OSX a partir de un programa python</h2>
+<p>https://py2app,readthedocs,io/en/latest/tutorial,html#create-a-setup-py-file</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>py2applet --make-setup MyApplication,py
+python3 setup,py py2app
+</code></pre></div></div>
+
+<p>Y listo! ya está generada la aplicación,</p>
+
+<p>Para ejecutar desde consola: <code class="language-plaintext highlighter-rouge">,/dist/MyApplication,app/Contents/MacOS/MyApplication</code>
+Para ejecutar sin consola hacer doble click sobre el archivo\to bien: <code class="language-plaintext highlighter-rouge">open -a dist/MyApplication,app</code></p>
+
+<p>Si queremos volver a generar\tes mejor borrar lo anterior: <code class="language-plaintext highlighter-rouge">rm -rf build dist</code></p>
+
+<h2 id="actualizar-versión-de-cudnn">Actualizar versión de cuDNN</h2>
+
+<p>Bajar la versión correspondiente de la página de nvidia: <code class="language-plaintext highlighter-rouge">https://developer,nvidia,com/rdp/cudnn-download</code>\tteniendo en cuenta que sea compatible con la versión de CUDA que tenemos instalada</p>
+
+<p>supongamos que queda descargada en el directorio <code class="language-plaintext highlighter-rouge">packages</code></p>
+
+<h3 id="versión-destructiva">Versión destructiva:</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -f /usr/include/cudnn,h
+rm -f /usr/lib/x86_64-linux-gnu/*libcudnn*
+rm -f /usr/local/cuda-*/lib64/*libcudnn*
+
+cp -P packages/cudnn/include/cudnn,h /usr/include
+cp -P packages/cudnn/lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
+chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
+
+rm -rf packages/cudnn
+</code></pre></div></div>
+
+<h3 id="versión-no-destructiva">Versión no destructiva</h3>
+
+<p>Nota: Checkear si los siguientes archivos son equivalentes a los <code class="language-plaintext highlighter-rouge">rm -f</code> de la versión anterior</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mv /usr/include/cudnn,h /usr/include/cudnn,h,bkp
+sudo mv /usr/lib/x86_64-linux-gnu/libcudnn,so /usr/lib/x86_64-linux-gnu/libcudnn,so,bkp
+sudo mv /usr/lib/x86_64-linux-gnu/libcudnn,so,7 /usr/lib/x86_64-linux-gnu/libcudnn,so,7,bkp
+sudo mv /usr/lib/x86_64-linux-gnu/libcudnn,so,7,5,0 /usr/lib/x86_64-linux-gnu/libcudnn,so,7,5,0,bkp
+sudo mv /usr/lib/x86_64-linux-gnu/libcudnn_static,a /usr/lib/x86_64-linux-gnu/libcudnn_static,a,bkp
+sudo mv /usr/lib/x86_64-linux-gnu/libcudnn_static_v7,a /usr/lib/x86_64-linux-gnu/libcudnn_static_v7,a,bkp
+
+sudo cp -P packages/cudnn/include/cudnn,h /usr/include
+sudo cp -P packages/cudnn/lib64/libcudnn* /usr/lib/x86_64-linux-gnu/
+sudo chmod a+r /usr/lib/x86_64-linux-gnu/libcudnn*
+</code></pre></div></div>
+
+<h2 id="transfer-learning">Transfer learning</h2>
+<p>https://www,tensorflow,org/tutorials/image_retraining</p>
+
+<p>1, <code class="language-plaintext highlighter-rouge">git clone https://github,com/tensorflow/tensorflow,git</code>
+2, <code class="language-plaintext highlighter-rouge">cd tensorflow</code>
+3, Proveer una base de datos con las imagenes de cada clase dentro de una	carpeta con su nombre, Por ejemplo\tla base de datos se llamará ejemplo y queremos clasificar imagenes de <code class="language-plaintext highlighter-rouge">&lt;clase1&gt;</code> y <code class="language-plaintext highlighter-rouge">&lt;clase2&gt;</code>\tentonces la estructura debe ser:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;path&gt;/ejemplo/
+&lt;path&gt;/ejemplo/clase1
+&lt;path&gt;/ejemplo/clase2
+</code></pre></div></div>
+
+<p>4, Ejecutar <code class="language-plaintext highlighter-rouge">python tensorflow/examples/image_retraining/retrain,py --image_dir &lt;path&gt;/ejemplo</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Esto creará los archivos:
+	- /tmp/output_graph,pb: que es el modelo entrenado
+	- /tmp/output_labels,txt: que tiene los nombres de las clases
+Estos archivos son los necesarios para luego utilizar la red re-entrenada 5, Es bueno guardar esos archivos\tpor ejemplo junto a la base de datos
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cp /tmp/output_graph,pb &lt;path&gt;/ejemplo/graph,pb`
+cp /tmp/output_labels,txt &lt;path&gt;/ejemplo/labels,txt`
+</code></pre></div></div>
+
+<p>6, Para testear una imagen cualquiera\tejecutar:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 tensorflow/examples/label_image/label_image,py \
+	--graph=/tmp/output_graph,pb \
+	--labels=/tmp/output_labels,txt \
+	--input_layer=Mul \
+	--output_layer=final_result \
+	--input_mean=128 \
+	--input_std=128 \
+	--image=&lt;path_a_la_imagen_a_testear&gt;
+</code></pre></div></div>
+
+<p>Ejemplo: parado en el directorio <code class="language-plaintext highlighter-rouge">/Users/matitai/Documents/work/dsense/eikyou/data</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 ,,/tensorflow/tensorflow/examples/label_image/label_image,py --graph=cosmetics/graph_lipstick_mascara_google_images,pb --labels=cosmetics/labels_lipstick_mascara,txt --input_layer=Mul --output_layer=final_result --input_mean=128 --input_std=128 --image=eikyou_cosmetics/lipstick/22709142_976743082466258_7335721961663758336_n,jpg
+</code></pre></div></div>
+
+<h2 id="object-detector">Object detector</h2>
+<p>https://research,googleblog,com/2017/06/supercharge-your-computer-vision-models,html
+https://github,com/tensorflow/models
+https://github,com/tensorflow/models/tree/master/research/object_detection
+https://towardsdatascience,com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9
+https://github,com/datitran/raccoon_dataset</p>
+
+<p>Hay que bajar este repo (https://github,com/tensorflow/models) y todo lo que se
+hace de aca en adelante se debe hacer ubicados en el directorio research:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd &lt;path&gt;/tensorflow/models/research
+</code></pre></div></div>
+
+<p>Se necesitan:</p>
+<ul>
+  <li>tfrecord para entrenamiento</li>
+  <li>tfrecord para validacion</li>
+  <li>model checkpoint: desde donde empezar a entrenar
+    <ul>
+      <li>ref: https://github,com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo,md</li>
+    </ul>
+  </li>
+  <li>pipeline,config: archivo de configuacion para el entrenamiento</li>
+  <li>labels</li>
+</ul>
+
+<h3 id="para-generar-la-base-de-datos-y-los-tfrecords">Para generar la base de datos y los tfrecords</h3>
+<p>https://github,com/tzutalin/labelImg</p>
+
+<p>Se ejecuta asi: <code class="language-plaintext highlighter-rouge">python3 Documents/work/dsense/eikyou/labelImg-master/labelImg,py</code></p>
+<ul>
+  <li>Hay que pasarle un directorio donde estan las imagenes y para cada una de ellas va a generar un xml con las objetos de interes y sus regiones,</li>
+  <li>A partir de los xmls de cada imagen generamos un csv unico con todo\tusando el script xml2csv,py que esta en el directorio research de tensorflow: <code class="language-plaintext highlighter-rouge">/Users/matitai/Documents/work/dsense/eikyou/tensorflow/models/research</code></li>
+  <li>Este csv lo podemos dividir (en principio a mano) en dos ,csv\tuno para entrenar y otro para validacion,</li>
+  <li>Con cada uno de esos vamos a generar un ,tfrecord usando el script generate_tfrecord,py que esta en el direcorio research mencionado mas arriba,</li>
+</ul>
+
+<p>Hay que tener cuidado con el metodo <code class="language-plaintext highlighter-rouge">class_text_to_int</code> dentro de este script,de forma de hacer coincidir los labels con los que queremos usar finalmente,</p>
+
+<h3 id="generar-los-labels">Generar los labels</h3>
+<p>Generar un archivo que se llame por ejemplo “label_map,txt” con el siguiente contenido (adaptado):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>item {
+  id: 1
+  name: 'lipstick'
+}
+item {
+  id: 2
+  name: 'mascara'
+}
+</code></pre></div></div>
+
+<p>Notar que los ids tienen que empezar en 1</p>
+
+<h3 id="generar-el-pipelineconfig">Generar el pipeline,config</h3>
+<p>Aca hay muchos ejemplos:
+https://github,com/tensorflow/models/tree/master/research/object_detection/samples/configs</p>
+
+<p>La idea es partir de uno como base y adaptarlo, Hay cosas muy importantes para que funcione\tcomo que el checkpoint que se use y el modelo que se declara en el config tienen que venir de la misma arquitectura, Si usamos un ssd hay que usar ssd en los dos lugares, O si usamos un rcnn lo mismo\ten los dos lados,
+Tipicamente en el pipeline,config hay que tocar 5 lugares\tel path al checkpoint\tal train,tfrecord\tal test,tfrecord y a las etiquetas de los labels
+de entranmiento y validacion</p>
+
+<h3 id="checkpoint">Checkpoint</h3>
+<p>https://github,com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo,md</p>
+
+<p>En la referencia hay varios modelos para bajar como checkpoint inicial, Luego de que ya tenemos re-entrenada nuestra red\tya generamos nuestros propios
+checkpoints y ya podriamos partir de ellos, Para iniciar podemos empezar bajando alguno de la referencia y copiandolos por ejemplo a <code class="language-plaintext highlighter-rouge">object_detection/pretrained</code>
+Por ejemplo ahora tengo uno base de <code class="language-plaintext highlighter-rouge">rcnn</code> y otro de <code class="language-plaintext highlighter-rouge">sdd</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;path&gt;/tensorflow/models/research/object_detection/pretrained/faster_rcnn_inception_resnet_v2_atrous_coco_2018_01_28/
+&lt;path&gt;/tensorflow/models/research/object_detection/pretrained/ssd_mobilenet_v1_coco_2017_11_17/
+</code></pre></div></div>
+
+<h3 id="entrenamiento">Entrenamiento</h3>
+<p>https://github,com/tensorflow/models/blob/master/research/object_detection/g3doc/running_locally,md</p>
+
+<p>Usar la siguiente estructura de directorios sugerida dentro de <code class="language-plaintext highlighter-rouge">tensorflow/models/research/object_detection</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>+data
+  -label_map file
+  -train TFRecord file
+  -eval TFRecord file
++models
+  + model
+    -pipeline config file
+    +train
+    +eval
+</code></pre></div></div>
+
+<p>Y ejecutar el script de entrenamiento:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python object_detection/train,py \
+    --logtostderr \
+    --pipeline_config_path=${PATH_TO_YOUR_PIPELINE_CONFIG} \
+    --train_dir=${PATH_TO_TRAIN_DIR}
+</code></pre></div></div>
+
+<p>En <code class="language-plaintext highlighter-rouge">tensorflow/models/research/object_detection/models/model/train</code> se van a ir generando paulatinamente nuevos checkpoints a medida que se va a entranando la red, Por ejemplo\tluego de 1000 steps se generan los archivos de checkpoint:</p>
+<ul>
+  <li>model,ckpt-1000,meta</li>
+  <li>model,ckpt-1000,index</li>
+  <li>model,ckpt-1000,data-00000-of-00001
+que luego se usaran para exportar el modelo por ejemplo</li>
+</ul>
+
+<p>Para testear se deberia usar algo como esto (nunca me funciono hasta ahora):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python object_detection/eval,py \
+	--logtostderr \
+	--pipeline_config_path=object_detection/models/model/pipeline2config \
+	--checkpoint_dir=object_detection/models/model/train/ \
+	--eval_dir=object_detection/models/model/eval/
+</code></pre></div></div>
+
+<h3 id="para-exportar-el-modelo-entrenado">Para exportar el modelo entrenado</h3>
+<p>https://github,com/tensorflow/models/blob/master/research/object_detection/g3doc/exporting_models,md</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># From tensorflow/models/research/
+python object_detection/export_inference_graph,py \
+    --input_type image_tensor \
+    --pipeline_config_path ${PIPELINE_CONFIG_PATH} \
+    --trained_checkpoint_prefix ${TRAIN_PATH} \
+    --output_directory output_inference_graph,pb
+</code></pre></div></div>
+
+<p>en el ejemplo que venimos manejando:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python object_detection/export_inference_graph,py \
+	--input_type image_tensor \
+	--pipeline_config_path object_detection/models/model/pipeline,config \
+	--trained_checkpoint_prefix object_detection/models/model/train/model,ckpt-1000 \
+	--output_directory object_detection/data/exported_model/
+</code></pre></div></div>
+<p>python object_detection/export_inference_graph,py –input_type image_tensor –pipeline_config_path object_detection/models/model/pipeline,config –trained_checkpoint_prefix object_detection/models/model/train/model,ckpt-1000 –output_directory object_detection/data/exported_model/</p>
+
+<h3 id="correr-el-modelo-entranado-sobre-una-imagen">Correr el modelo entranado sobre una imagen</h3>
+<p>https://github,com/tensorflow/models/blob/master/research/object_detection/object_detection_tutorial,ipynb</p>
+
+<p>Se puede seguir el notebook que esta en <code class="language-plaintext highlighter-rouge">tensorflow/models/research/object_detection/object_detection_tutorial,ipynb</code> o ejecutar el script object_detector_single_image,py que esta en el repo, Las rutas al modelo y las imagenes estan hardcodeadas en el script, Cambiarlas de
+ser necesario,</p>
+
+<h2 id="mask-rcnn">Mask-RCNN</h2>
+
+<h3 id="instalación">Instalación</h3>
+
+<p>Pre-requisito: tener instalado cython y pycocotools (se puede hacer con pip)</p>
+
+<p>Usamos el repositorio de matterport\tque usa <strong>Keras</strong> y <strong>Tensorflow</strong> en <em>Python 3</em>: <a href="https://github,com/matterport/Mask_RCNN,git">link</a></p>
+
+<ul>
+  <li>Primero creamos un entorno virtual: <code class="language-plaintext highlighter-rouge">virtualenv -p python3 env</code></li>
+  <li>Y lo activamos: <code class="language-plaintext highlighter-rouge">source env/bin/activate</code></li>
+  <li>Instalamos los requerimientos: <code class="language-plaintext highlighter-rouge">pip install -r requirements,txt</code></li>
+  <li>
+    <p>Setup (talvez hay que hacer lo de CocoAPI antes): <code class="language-plaintext highlighter-rouge">python setup,py install</code></p>
+
+    <ul>
+      <li>Bajamos CocoAPI (puede ser en otro directorio): <code class="language-plaintext highlighter-rouge">git clone https://github,com/pdollar/coco,git</code></li>
+      <li>Lo instalamos:
+        <ul>
+          <li><code class="language-plaintext highlighter-rouge">cd coco/PythonAPI</code></li>
+          <li><code class="language-plaintext highlighter-rouge">make</code></li>
+          <li><code class="language-plaintext highlighter-rouge">sudo make install</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">sudo python setup,py install</code></li>
+</ul>
+
+<h3 id="ejemplo-de-ejecución">Ejemplo de ejecución:</h3>
+
+<p><code class="language-plaintext highlighter-rouge">(env) mattai@MacTai:~/develop/mrcnn$ python sheep,py train --dataset=dataset/ --weights=coco</code></p>
+
+<h2 id="semantic-segmentation">Semantic Segmentation</h2>
+
+<p>Basado en el repositorio: <a href="https://github,com/akirasosa/mobile-semantic-segmentation">link</a></p>
+
+<p>Utiliza <strong>Keras 2</strong> y <strong>Tensorflow</strong> en <em>Python 3</em></p>
+
+<p>Requisitos:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install tensorflow
+pip install keras==2,1,4
+</code></pre></div></div>
+
+<p>Creamos la siguiente estructura:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data
+  raw
+    images
+      im1,jpg
+      im2,jpg
+      ,
+      ,
+      imN,jpg
+    masks
+      mask1,ppm
+      mask2,ppm
+      ,
+      ,
+      maskN,ppm
+</code></pre></div></div>
+
+<p>Creamos un archivo binario de numpy:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python data,py --data_dir=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/raw/ --out_dir=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/ --img_size=192
+</code></pre></div></div>
+
+<p>Entrenamos:</p>
+
+<p>Completo:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python train_full,py --img_file=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/images-192,npy --mask_file=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/masks-192,npy
+</code></pre></div></div>
+
+<p>Top model:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python train_top_model,py --img_file=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/images-192,npy --mask_file=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/masks-192,npy
+</code></pre></div></div>
+
+<p>Fine tune:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python train_fine_tune,py --img_file=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/images-192,npy --mask_file=/Users/matitai/Documents/work/dsense/clu-sul/learning/semantic/data/masks-192,npy
+</code></pre></div></div>
+
+
+<!-- Comments only for posts -->
+
+    
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> &copy; Matías Tailanian 2022
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>.
+                    Last updated on 15 July 2022
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons"><a title=""
+class="social-button linkedin"
+href="https://www.linkedin.com/in/#mtailanian" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-linkedin"></i>
+</a><a title=""
+class="social-button github"
+href="https://www.github.com/mtailanian" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-github"></i>
+</a><a title=""
+class="social-button researchgate"
+href="https://www.researchgate.net/profile/Matias-Tailanian" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-researchgate"></i>
+</a><a title=""
+class="social-button orcid"
+href="https://orcid.org/0000-0002-0928-2775" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-orcid"></i>
+</a><a title=""
+class="social-button instagram" itemprop="sameAs"
+href="https://www.instagram.com/taimatitai"
+target="_blank">
+<i class="fab fa-instagram"></i>
+</a><p> _______________ </p>
+
+</div>
+
+
+        </footer>
+        
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+    </body>
+
+</html>
