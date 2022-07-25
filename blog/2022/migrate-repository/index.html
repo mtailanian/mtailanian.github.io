@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/assets/css/main.css">
+
+        <div class="links scroll">
+        <a href="/">Home</a>
+        <a href="/publications/">Publications</a>
+        <a href="/code/">Code</a>
+        <!-- <a href="/projects/">Projects</a> -->
+        <a href="/blog/">Blog</a>
+        <!-- <a href="/archive/">Archive</a> -->
+        <a href="/photography/">Photography</a>
+</div>
+
+        <p> </p>
+
+        <h1 class="post-headline">Matías Tailanian</h1>
+        <h3 class="post-description">Msc. in Applied Mathematics, Vision and Machine Learning. Almost PhD.
+</h3>
+
+        <p style="margin-bottom:1.2cm;"></p>
+
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Migrate repository origin | Matías Tailanian</title>
+<meta name="generator" content="Jekyll v4.2.2" />
+<meta property="og:title" content="Migrate repository origin" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Migrate repository origin" />
+<meta property="og:description" content="Migrate repository origin" />
+<link rel="canonical" href="/blog/2022/migrate-repository/" />
+<meta property="og:url" content="/blog/2022/migrate-repository/" />
+<meta property="og:site_name" content="Matías Tailanian" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-07-25T00:00:00-03:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Migrate repository origin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-07-25T00:00:00-03:00","datePublished":"2022-07-25T00:00:00-03:00","description":"Migrate repository origin","headline":"Migrate repository origin","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2022/migrate-repository/"},"url":"/blog/2022/migrate-repository/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <!-- Generated using https://favicon.io/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?">
+<link rel="manifest" href=site.webmanifest">
+
+
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+
+        <!-- Gallery stuff -->
+      
+
+      
+
+
+    </head>
+
+    <body>
+        <main>
+            <article>
+                <h1 class="post-headline">Migrate repository origin</h1>
+<p class="meta"><small>July 25, 2022</small></p>
+
+<h1 id="migrate-repository-origin">Migrate repository origin</h1>
+
+<p>Sometimes you need to move your existing git repository to a new remote repository (/new remote origin).</p>
+
+<p>Here are a simple and quick steps that does exactly this.</p>
+
+<p>Let’s assume we call <code class="language-plaintext highlighter-rouge">old repo</code> the repository you wish to move, and <code class="language-plaintext highlighter-rouge">new repo</code> the one you wish to move to.</p>
+
+<h2 id="step-1">Step 1.</h2>
+
+<p>Make sure you have a local copy of all <code class="language-plaintext highlighter-rouge">old repo</code> branches and tags.</p>
+
+<h3 id="fetch-all-of-the-remote-branches-and-tags">Fetch all of the remote branches and tags</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git fetch origin
+</code></pre></div></div>
+
+<h3 id="make-a-local-copy-of-all-remote-brances">Make a local copy of all remote brances</h3>
+
+<p>View all <code class="language-plaintext highlighter-rouge">old repo</code> local and remote branches</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-a</span>
+</code></pre></div></div>
+
+<p>If some of the remotes/ branches doesn’t have a local copy, checkout to create a local copy of the missing ones:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> &lt;branch&gt; origin/&lt;branch&gt;
+</code></pre></div></div>
+
+<p>Now we have to have all remote branches locally.</p>
+
+<h2 id="step-2-add-a-new-repo-as-a-new-remote-origin">Step 2. Add a <code class="language-plaintext highlighter-rouge">new repo</code> as a new remote origin:</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add new-origin git@github.com:user/repo.git
+</code></pre></div></div>
+
+<h2 id="step-3-push-all-local-branches-and-tags-to-a-new-repo">Step 3. Push all local branches and tags to a <code class="language-plaintext highlighter-rouge">new repo</code>.</h2>
+
+<h3 id="push-all-local-branches-note-were-pushing-to-new-origin">Push all local branches (note we’re pushing to new-origin):</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">--all</span> new-origin
+</code></pre></div></div>
+
+<h3 id="push-all-tags">Push all tags:</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">--tags</span> new-origin
+</code></pre></div></div>
+
+<h2 id="step-4-remove-old-repo-origin-and-its-dependencies">Step 4. Remove <code class="language-plaintext highlighter-rouge">old repo</code> origin and its dependencies.</h2>
+
+<h3 id="view-existing-remotes-youll-see-2-remotes-for-both-fetch-and-push">View existing remotes (you’ll see 2 remotes for both fetch and push)</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote <span class="nt">-v</span>
+</code></pre></div></div>
+
+<h3 id="remove-old-repo-remote">Remove <code class="language-plaintext highlighter-rouge">old repo</code> remote</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote <span class="nb">rm </span>origin
+</code></pre></div></div>
+
+<h3 id="rename-new-repo-remote-into-just-origin">Rename <code class="language-plaintext highlighter-rouge">new repo</code> remote into just <code class="language-plaintext highlighter-rouge">origin</code></h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote rename new-origin origin
+</code></pre></div></div>
+
+<p>Done! Now your local git repo is connected to “new repo” remote which has all the branches, tags and commits history.</p>
+
+<p><a href="https://gist.github.com/niksumeiko/8972566?permalink_comment_id=3037855">Taken from here</a></p>
+
+
+<!-- Comments only for posts -->
+
+    
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> &copy; Matías Tailanian 2022
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/">Gradfolio</a>.
+                    Last updated on 25 July 2022
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons"><a title=""
+class="social-button linkedin"
+href="https://www.linkedin.com/in/#mtailanian" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-linkedin"></i>
+</a><a title=""
+class="social-button github"
+href="https://www.github.com/mtailanian" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-github"></i>
+</a><a title=""
+class="social-button researchgate"
+href="https://www.researchgate.net/profile/Matias-Tailanian" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-researchgate"></i>
+</a><a title=""
+class="social-button orcid"
+href="https://orcid.org/0000-0002-0928-2775" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-orcid"></i>
+</a><a title=""
+class="social-button instagram" itemprop="sameAs"
+href="https://www.instagram.com/taimatitai"
+target="_blank">
+<i class="fab fa-instagram"></i>
+</a><p> _______________ </p>
+
+</div>
+
+
+        </footer>
+        
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+    </body>
+
+</html>
