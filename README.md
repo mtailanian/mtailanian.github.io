@@ -2,7 +2,7 @@
 
 Checkout to the branch where the source code of the webpage is located: main
 
-Optionally add `_site` to `.gitignore`
+Upload new changes as usual
 
 Remove all the content of the `_site` directory:
 
@@ -17,7 +17,7 @@ git clone -b gh-pages git@github.com:mtailanian/mtailanian.github.io.git _site
 
 Final steps: Just let jekyll build, do commit & push:
 ```
-$ jekyll build,
+$ jekyll build 
 cd into _site:
 $ cd _site,
 ```
