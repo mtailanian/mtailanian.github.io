@@ -7,7 +7,7 @@ Upload new changes as usual
 Remove all the content of the `_site` directory:
 
 ```
-$ rm -r _site/*
+sudo rm -r _site
 ```
 
 Clone your repo's gh-pages branch into the _site directory:
@@ -19,7 +19,7 @@ Final steps: Just let jekyll build, do commit & push:
 ```
 $ jekyll build 
 cd into _site:
-$ cd _site,
+$ cd _site
 ```
 
 target all files for commit:
@@ -36,7 +36,7 @@ git commit -am 'Yeah. Built from subdir'
 and push your site to GitHub-Pages:
 
 ```
-git push.
+git push
 ```
 
 
