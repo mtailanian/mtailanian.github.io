@@ -31,14 +31,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Msc. in Applied Mathematics, Vision and Machine Learning. Almost PhD." />
 <meta property="og:description" content="Msc. in Applied Mathematics, Vision and Machine Learning. Almost PhD." />
-<link rel="canonical" href="/projects/" />
-<meta property="og:url" content="/projects/" />
+<link rel="canonical" href="/phd/" />
+<meta property="og:url" content="/phd/" />
 <meta property="og:site_name" content="Matías Tailanian" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Matías Tailanian" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Msc. in Applied Mathematics, Vision and Machine Learning. Almost PhD.","headline":"Matías Tailanian","url":"/projects/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Msc. in Applied Mathematics, Vision and Machine Learning. Almost PhD.","headline":"Matías Tailanian","url":"/phd/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -76,111 +76,58 @@
     <body>
         <main>
             <article>
-                <div class="ProjectContainer">
+                <h1 id="deep-image-generative-modeling-and-statistical-testing-for-industrial-anomaly-detection">Deep Image Generative Modeling and Statistical Testing for Industrial Anomaly Detection</h1>
 
-	<div class="gallery">
+<h2 id="defensa-doctorado-matías-tailanian">Defensa Doctorado Matías Tailanian</h2>
 
+<p>Tutores:</p>
+<ul>
+  <li>Pablo Musé</li>
+  <li>Álvaro Pardo</li>
+</ul>
 
-  
+<p>Tribunal:</p>
+<ul>
+  <li>Matías Di Martino</li>
+  <li>Thibaud Ehret</li>
+  <li>Jean-Michel Morel</li>
+  <li>Gregory Randall</li>
+</ul>
 
-  
+<h3 id="coordenadas">Coordenadas</h3>
 
-  <div class="projectTile">
-          <a href="/projects/1_project/">
-          <span>
-              <h2>Short Project</h2>
-              <br />
-              <p>description of the short project which is long enough</p>
-          </span>
-          </a>
-  </div>
+<p>Fecha: Martes 17 de setiembre, 8h @ Uruguay</p>
 
-  
+<p>Lugar:</p>
 
-  
+<ul>
+  <li>
+    <p>Facultad de Ingeniería, salón 705 (piso 7, cuerpo central). Habrá un brindis a continuación en Instituto de Ingeniería Eléctrica.</p>
+  </li>
+  <li>
+    <p>Zoom :</p>
 
-  
+    <ul>
+      <li>https://salavirtual-udelar.zoom.us/j/2165307614?pwd=c1EvSnlUUFg0TDlKUDVRd3lKOG01Zz09</li>
+      <li>Meeting ID: 216 530 7614</li>
+      <li>Passcode: pwd-AB2021</li>
+    </ul>
+  </li>
+</ul>
 
-  <div class="projectTile">
-          <a href="/projects/2_project/">
-          <span>
-              <h2>A longer Project Title</h2>
-              <br />
-              <p>short project description</p>
-          </span>
-          </a>
-  </div>
+<h2 id="resumen">Resumen</h2>
 
-  
+<p>This thesis addresses the challenge of anomaly detection in images, for industrial applications. It explores advanced methodologies employing both classical image processing techniques and modern generative modeling approaches, specifically focusing on Normalizing Flows and Diffusion Models.</p>
 
-  
+<p>As anomalies are rare by definition, collecting normal samples is generally easier and more feasible in industrial settings than acquiring comprehensive datasets with labeled anomalies. Therefore, the focus of this research is on unsupervised methods, and one-class methods, where the idea is to model the “normality” and detect anomalies as everything that deviates from this model.</p>
 
-  
-  <div class="projectTile">
-          <a href="https://unsplash.com" target="_blank">
-          <span>
-              <h2>Click to Redirect to Project</h2>
-              <br />
-              <p>with no page entry here</p>
-          </span>
-          </a>
-  </div>
+<p>Initially, a multi-scale anomaly detection method based on classical image processing techniques is proposed, leveraging an a contrario approach to control the number of false alarms. Subsequently, a novel method called U-Flow is introduced, which employs a U-shaped architecture in Normalizing Flows to achieve anomaly detection with automatic thresholding. Then, this thesis further explores the use of Diffusion Models for anomaly detection, presenting the Diffusion Anomaly Detection (DAD) method. This work incorporates score-based generative models and inpainting techniques to refine anomaly detection capabilities. Additionally, a new diffusion-based method called RIFA (Random Inpainting For Anomaly detection) is proposed as a completely unsupervised alternative. Finally, the techniques and knowledge gained from Diffusion Models are applied to a completely different application: counter-forensics.</p>
 
-  
+<p>Throughout the whole thesis, a special emphasis is placed on bridging the gap between theoretical research and practical industrial applications, setting the theoretical foundations for obtaining automatic segmentations of anomalies, by performing statistical tests and controlling the number of false alarms using the a contrario framework.</p>
 
-  
+<p>Experimental results on standard datasets validate the effectiveness of the proposed methods, highlighting substantial performance gains in some cases. The final chapter applies the best-performing method to two industrial problems: quality control in manufacturing leather samples for the upholstery industry, and defect detection in fruits, demonstrating its practical viability and impact on improving quality control processes in these industries.</p>
 
-  
-
-  <div class="projectTile">
-          <a href="/projects/4_project/">
-          <span>
-              <h2>Project 4</h2>
-              <br />
-              <p>another project</p>
-          </span>
-          </a>
-  </div>
-
-  
-
-  
-
-  
-
-  <div class="projectTile">
-          <a href="/projects/5_project/">
-          <span>
-              <h2>Project 5</h2>
-              <br />
-              <p>another project</p>
-          </span>
-          </a>
-  </div>
-
-  
-
-  
-
-  
-
-  <div class="projectTile">
-          <a href="/projects/6_project/">
-          <span>
-              <h2>Project 6</h2>
-              <br />
-              <p>another project</p>
-          </span>
-          </a>
-  </div>
-
-  
-
-  
-
-	</div>
-
-</div>
+<p>In addition, this research contributes to the open-source community with several code repositories and has resulted in four published papers so far, and hopefully, more will follow. Future work will particularly focus on improving likelihood estimation with Diffusion Models and expanding its applicability to other industrial domains.</p>
 
             </article>
         </main>
