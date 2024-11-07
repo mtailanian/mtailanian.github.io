@@ -13,9 +13,11 @@ I'm an Uruguayan **Machine Learning Engineer** and researcher, in my 30's, passi
 
 With a background in signal processing, I've been working for the last 10+ years in **Machine Vision**, **Image Processing**, and **Machine Learning**. I love both industrial and academic work, and I have always been attracted by applied projects, where I can use the theory to make actual applications, that actually work. 
 
+In 2024 I obtained my Ph.D. degree, where I developed several unsupervised and self-supervised methods for Anomaly Detection in images, for industrial environments, using classical image processing techniques and Deep Generative Modeling, such as Normalizing Flows and Diffusion Models.
+
 In 2014 I was awarded a Fellowship to pursue my [Master's degree at Paris Saclay, France](http://cmla.ens-paris-saclay.fr/version-anglaise/academics/mva-master-degree-227777.kjsp?RH=1382710237147){:target="_blank"}, where I graduated with the highest honors. For the internship, I worked in a 3D video-based reconstruction system at Autodesk, France.
 
-I'm currently working in the industry in a Machine Learning studio, [Digital Sense](https://www.digitalsense.ai/){:target="_blank"}, solving Machine Vision problems, and also doing my PhD. in the field of Anomaly Detection in images. I'm especially interested in unsupervised or self-supervised learning, and currently, I'm exploring Bayesian Inference to model data likelihood with Normalizing Flows. 
+I'm currently working in the industry in a Machine Learning studio, [Digital Sense](https://www.digitalsense.ai/){:target="_blank"}, solving Machine Vision problems.
 
 
 <!-- [Gradfolio](https://github.com/jitinnair1/gradfolio){:target="_blank"} is a responsive, dark-mode ready Jekyll theme designed keeping academia in mind. The easiest way to install the theme is to fork it using GitHub. Check the README file for [instructions](https://github.com/jitinnair1/gradfolio#installation){:target="_blank"}.

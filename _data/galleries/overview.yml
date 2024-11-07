@@ -1,5 +1,5 @@
 -
-  title: A Very Basic Example Gallery
+  title: Some photos to show
   directory: san-francisco
   preview:
     filename: dsc02154_39908591493_o.jp-6000x4000
@@ -13,7 +13,7 @@
     thumbnail: dsc02154_39908591493_o.jp-6000x4000_factor-16.jpg
 
 -
-  title: A More Complicated Example Gallery
+  title: Chosen photos
   directory: ghent-light-festival
   preview:
     filename: dsc02450_39908595693_o.jp-6000x4000
@@ -27,7 +27,7 @@
     thumbnail: dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
 
 -
-  title: A More Complicated Example Gallery
+  title: Same chosen photos
   directory: ghent-light-festival
   preview:
     filename: dsc02450_39908595693_o.jp-6000x4000
@@ -41,7 +41,7 @@
     thumbnail: dsc02450_39908595693_o.jp-6000x4000_factor-16.jpg
 
 -
-  title: A More Complicated Example Gallery
+  title: Same chosen photos (will update soon... maybe)
   directory: ghent-light-festival
   preview:
     filename: dsc02450_39908595693_o.jp-6000x4000
